@@ -102,11 +102,11 @@ Avaliar competências em:
 - [x] Endpoint para **extrair e gravar** via OpenWeather (`POST /api/openweather?city=...`)
 - [x] Endpoints REST para registos gravados (`GET /api/weather`, `GET /api/weather/{id}`)
 - [x] Schemas Pydantic de resposta (`response_model`)
-- [ ] Verificar documentação em `/docs`
+- [x] Verificar documentação em `/docs`
 
 ### Docker e entrega
 
 - [x] `Dockerfile` da API
 - [x] `docker-compose.yml` (API + PostgreSQL)
 - [x] `README.md` (setup, `.env`, execução, exemplos de curl/Swagger)
-- [ ] Push do repositório para o GitHub
+- [x] Push do repositório para o GitHub
