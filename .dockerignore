@@ -1,0 +1,25 @@
+# Git e IDE
+.git
+.gitignore
+.cursor
+
+# Python local
+.venv
+__pycache__
+*.py[cod]
+*.egg-info
+.pytest_cache
+.ruff_cache
+.mypy_cache
+
+# Secrets e env local
+.env
+
+# Docs
+CHALLENGE.md
+README.md
+
+# Artefactos
+build
+dist
+wheels
