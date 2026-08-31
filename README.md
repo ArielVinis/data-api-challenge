@@ -2,7 +2,18 @@
 
 Desafio técnico em que integro a [OpenWeather](https://openweathermap.org/api), persisto os dados em PostgreSQL e exponho uma API REST com FastAPI.
 
-Documentação interativa: http://localhost:8000/docs
+Documentação: Swagger disponível em `/docs` após iniciar a aplicação.
+
+## Tecnologias
+
+- Python 3.14
+- FastAPI
+- SQLModel
+- PostgreSQL
+- httpx
+- Docker / Docker Compose
+- uv
+- OpenWeather API
 
 ## O que a API faz
 
@@ -11,6 +22,19 @@ Documentação interativa: http://localhost:8000/docs
 3. **REST** — consulta os registros já armazenados no banco
 
 Separei as rotas de integração (`/api/openweather`) das rotas REST (`/api/weather`). A parte RESTful do desafio é consultar **os dados persistidos**: listar a coleção e buscar por `id`.
+
+## Arquitetura
+
+```
+Cliente (curl / Swagger)
+        │
+        ▼
+     FastAPI
+    /       \
+   ▼         ▼
+OpenWeather  PostgreSQL
+(integração) (REST /api/weather)
+```
 
 ## Pré-requisitos
 
@@ -24,7 +48,7 @@ Separei as rotas de integração (`/api/openweather`) das rotas REST (`/api/weat
 cp .env.example .env
 ```
 
-No `.env`, preencha pelo menos:
+No `.env`, preencha:
 
 ```env
 OPENWEATHER_API_KEY=sua_chave_aqui
@@ -112,6 +136,6 @@ Usei `create_all` no startup para criar a tabela — simples o suficiente para e
 
 ## Segurança
 
-- `.env` no `.gitignore` — não enviar para o GitHub
+- `.env` no `.gitignore`
 - `.env.example` só com placeholders
 - Keys novas da OpenWeather podem levar alguns minutos para ativar
